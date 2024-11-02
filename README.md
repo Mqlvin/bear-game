@@ -1,5 +1,5 @@
 ## Bear game
-A mutliplayer, text-based browser game I made for school.
+A multiplayer, text-based browser game I made for school.
 <br>
 ### Storyline
 It involves a murderer bear, and 3 innocent bears. The innocent bears must search the house for clues
