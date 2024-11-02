@@ -1,5 +1,5 @@
 ## Bear game
-A mutilplayer, text-based game I made for school.
+A mutliplayer, text-based browser game I made for school.
 <br>
 ### Storyline
 It involves a murderer bear, and 3 innocent bears. The innocent bears must search the house for clues
@@ -14,7 +14,6 @@ The general game is text-based, except for being able to view other bear charact
 <br>
 Hence, I used vanilla HTML/CSS/JS with a text-based system I developed in order to easily provide a bit more functionality than a plain old CLI would.
 The backend is written (scruffily) in Python using `flask` and `flask-sock` for serving the web resources and providing the websocket server.
-I used this stack as it's once of the easiest and fastest ways to get functionality with as little effort as possible.
 <br>
 
 ### To play
