@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bear Game</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style/reset.css">
+        <link rel="stylesheet" href="style/common.css">
+
+        <link rel="stylesheet" href="style/terminal.css">
+
+        <link rel="stylesheet" href="style/menu/menu_side.css">
+        <link rel="stylesheet" href="style/menu/menu_bottom.css">
+        <link rel="stylesheet" href="style/menu/menu_dialogue.css">
+        <link rel="stylesheet" href="style/menu/menu_inventory.css">
+        <link rel="stylesheet" href="style/menu/bear_viewer.css">
+        <script src="style/terminal.js"></script>
+    </head>
+
+    <body onload="infiniteScrollLines()">
+        <div class="terminal">
+
+
+
+
+            <div class="dialoguemenu-container box-border">
+
+                <div id="dc" class="dialogue-text-container">
+                </div>
+
+                <div id="input-decor" class="input-selector-decor box-border"></div>
+                <div id="input-selector" class="anim-snappy-in dialogue-select-container">
+                </div>
+
+            </div> <!-- closes dialogue menu (left hand of screen) -->
+
+
+
+
+            <div style="margin-left: 20px;" class="sidemenu-container box-border">
+                <div class="name-card text-glow tektur-500"><div id="nameplate-prefix" class="font-small">Waiting for more players...</div><div id="nameplate" class="font-medium"></div></div>
+
+                <button id="view-bear-button" class="view-bear-button text-glow tektur-500">View other bears</button>
+
+                <div class="inventory-container">
+                    <div class="inventory-title name-card text-glow tektur-500 font-large">&emsp;&emsp;&emsp;Notebook&emsp;&emsp;&emsp;</div>
+                    <p id="no-evidence" class="instruction-entry tektur-300 text-glow font-small">Your evidence is tracked here. When there are entries, click them to view their full description.</p>
+                    <div id="evidence-container" class="evidence-container">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- bear viewing element -->
+            <div id="bv-element" class="bear-viewer-container box-border hidden-viewer"> <!--HIDDEN-->
+                <div class="bv-title text-glow tektur-700 font-large">&thinsp;&thinsp;&nbsp;Bear Viewer&nbsp;</div>
+                <div id="bv-stats-container" class="bv-stats-container">
+                </div>
+
+                <button id="bv-close" class="bv-container-close box-border text-glow tektur-500 font-small">Close</button>
+            </div>    
+
+        </div> <!-- closes terminal -->
+    </body>
+
+
+    <!-- finally launch the socket and start -->
+    <script src="script/socket_handler.js"></script>
+    <script src="script/input_handler.js"></script>
+    <script src="script/bear_viewer.js"></script>
+</html>

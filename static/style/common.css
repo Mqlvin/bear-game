@@ -1,0 +1,56 @@
+.box-border {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.19), inset 0px 0px 10px 2px rgba(255,255,255,0.19);
+}
+
+.tektur-300 {
+    font-family: "Tektur", sans-serif;
+    font-weight: 300;
+}
+
+.tektur-500 {
+    font-family: "Tektur", sans-serif;
+    font-weight: 500;
+}
+
+.tektur-700 {
+    font-family: "Tektur", sans-serif;
+    font-weight: 700;
+}
+
+.text-glow {
+    color: #FFFFFF;
+    font-size: 20px;
+    text-shadow: 0px 0px 5px #FFFFFFA0;
+
+    user-select: none;
+}
+
+.font-small {
+    font-size: 16px !important;
+}
+
+.font-medium {
+    font-size: 20px;
+}
+
+.font-large {
+    font-size: 24px;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+
+
+.anim-snappy-in {
+    transition: 0.7s;
+    transition-timing-function: cubic-bezier(.09,.56,.28,1);
+}
+
+.anim-snappy-out {
+    transition: 0.7s;
+    transition-timing-function: cubic-bezier(.55,.09,1,.28);
+}

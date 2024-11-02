@@ -1,0 +1,86 @@
+.dialoguemenu-container {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.dialogue-text-container {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    overflow-y: hidden;
+
+    padding: 30px;
+    padding-top: 0px;
+}
+
+.dialogue-text {
+    transition: 1s !important;
+    transition-timing-function: cubic-bezier(0,.05,.010,1) !important;
+}
+
+
+.select-option {
+    transition: 0.5s !important;
+    transition-timing-function: cubic-bezier(0,.05,.010,1) !important;
+}
+
+.select-unselected {
+    padding-left: 10px;
+
+    color: #D0D0D0;
+}
+
+.select-selected {
+    padding-left: 30px;
+
+    color: #FFFFFF;
+}
+
+.select-option.fade-out {
+    opacity: 0;
+}
+
+
+.dialogue-select-container {
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+    height: 220px;
+
+    overflow-y: hidden;
+
+    padding: 30px;
+    padding-top: 150px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.input-selector-decor {
+    position: fixed;
+    bottom: 50px;
+
+    width: 1px;
+    height: 220px;
+
+    overflow-y: hidden;
+
+    margin-left: 30px;
+
+    transition: 0.3s;
+}
+
+.decor-highlight {
+    border: 2px solid rgba(255, 255, 255, 0.30);
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.29), inset 0px 0px 8px 2px rgba(255,255,255,0.29);
+}
