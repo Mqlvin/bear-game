@@ -5,7 +5,7 @@ A multiplayer, text-based browser game I made for school.
 It involves a murderer bear, and 3 innocent bears. The innocent bears must search the house for clues
 as to whom the murderer is, avoiding the murderer's ability to fake evidence. Finally, the innocent bears
 must vote on whom the murderer is.<br><br>
-The storyline is procedurally generated each time the game is generated, using a list of facts and dynamically generating the bears characteristics on each game initialisation.
+The storyline is procedurally generated, generating a story from a list of facts and generating the bears characteristics accordingly, on each game initialisation.
 This means each story is relatively unique and makes the game re-playable and engaging.
 <br>
 
