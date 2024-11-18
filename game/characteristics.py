@@ -43,6 +43,7 @@ class CharacteristicManager:
     def gen_innocent_characteristics(self, murderer_characteristics):
         # first get list of characteristics that have been set
         set_characteristics = [attr for attr in vars(self) if not getattr(self, attr, None) == None]
+        print("already set characteristics for " + ": " + str(set_characteristics))
 
 
         # next get list of characteristics that are similar to murderer
@@ -68,26 +69,36 @@ class CharacteristicManager:
 
         # using the length of similar characteristics to murderer, we know how many more similar to make
         # match between 3 and 5 characteristics similar to murderer
-        should_match_n = random.randint(3, 5)
+        set_characteristics = [attr for attr in vars(self) if not getattr(self, attr, None) == None]
+        should_match_n = 6 - len(set_characteristics)
 
-        if not should_match_n >= len(similar_characteristics):
+
+        if should_match_n >= len(similar_characteristics):
             for i in range(0, should_match_n - len(similar_characteristics) + 1):
                 unset_characteristic = None
+
+                if not "gender" in set_characteristics:
+                    unset_characteristic = "fur_length"
+                elif not "colour" in set_characteristics:
+                    unset_characteristic = "colour"
+                elif not "fur_length" in set_characteristics:
+                    unset_characteristic = "fur_length"
+
                 while unset_characteristic is None:
                     random_characteristic = random.choice(vars(self))
                     if not random_characteristic in set_characteristics:
                         unset_characteristic = random_characteristic
 
-                if random_characteristic == "age":
-                    setattr(self, random_characteristic, murderer_characteristics.age - 5 + random.randint(1, 10))
-                elif random_characteristic == "height":
-                      setattr(self, random_characteristic, murderer_characteristics.height - 20 + random.randint(1, 40))
-                elif random_characteristic == "gender":
-                      setattr(self, random_characteristic, murderer_characteristics.gender)
-                elif random_characteristic == "colour":
-                      setattr(self, random_characteristic, murderer_characteristics.colour)
-                elif random_characteristic == "fur_length":
-                      setattr(self, random_characteristic, murderer_characteristics.fur_length)
+                if unset_characteristic == "age":
+                    setattr(self, unset_characteristic, murderer_characteristics.age - 5 + random.randint(1, 10))
+                elif unset_characteristic == "height":
+                      setattr(self, unset_characteristic, murderer_characteristics.height - 20 + random.randint(1, 40))
+                elif unset_characteristic == "gender":
+                      setattr(self, unset_characteristic, murderer_characteristics.gender)
+                elif unset_characteristic == "colour":
+                      setattr(self, unset_characteristic, murderer_characteristics.colour)
+                elif unset_characteristic == "fur_length":
+                      setattr(self, unset_characteristic, murderer_characteristics.fur_length)
 
 
         # now all similar characteristics are done, filled the rest of characteristics
