@@ -60,6 +60,27 @@ class FactKitchen3(StoryFact):
         return self
 
 
+class FactKitchen4(StoryFact):
+    def gen(self, char_obj):
+        if not char_obj.likes_food:
+            char_obj.likes_food = random.choice(foods)
+
+        self.fact_string = "You notice a freshly made smoothie. Upon further inspection, it smells of " + char_obj.likes_food + " and blood... Is this a drink of the murderer?"
+        return self
+
+
+class FactKitchen5(StoryFact):
+    def gen(self, char_obj):
+        if not char_obj.colour:
+            char_obj.colour = random.choice(colours)
+
+        if not char_obj.fur_length:
+            char_obj.fur_length = random.choice(furs)
+
+        self.fact_string = "You notice a tea-towel covered in bloody paw prints. As you take a closer look you notice " + (char_obj.colour if random.getrandbits(1) == 0 else char_obj.fur_length) + " fur stuck to the towel... Could this be the fur of the murderer?"
+        return self
+
+
 class FactGarage1(StoryFact):
     def gen(self, char_obj):
         if not char_obj.age:
@@ -145,6 +166,15 @@ class FactLounge3(StoryFact):
             return None
 
         self.fact_string = "As you walk into the lounge, you see an idle game of " + random.choice(["Mario Kart Wii", "Wii Sports", "Wii Sports Resort", "Animal Crossing: City Folk"]) + ", with a remote on the floor... Maybe this young bear was interrupted by the murder?"
+        return self
+
+
+class FactLounge4(StoryFact):
+    def gen(self, char_obj):
+        if not char_obj.colour:
+            char_obj.colour = random.choice(colours)
+
+        self.fact_string = "You notice bloody gloves strewn on the lounge floor. You cautiously take a look inside, and notice " + char_obj.colour + "fur... Could these be the murderer's gloves?"
         return self
 
 
@@ -280,7 +310,7 @@ class FactBathroom3(StoryFact):
 
 # List of rooms, class mapping of rooms and associated facts
 rooms = [Room.KITCHEN, Room.DINING_ROOM, Room.LIVING_ROOM, Room.GARAGE, Room.BEDROOM, Room.ENSUITE]
-class_map = {Room.KITCHEN:[FactKitchen1, FactKitchen2, FactKitchen3], Room.GARAGE:[FactGarage1, FactGarage2, FactGarage3, FactGarage4], Room.LIVING_ROOM:[FactLounge1, FactLounge2, FactLounge3], Room.DINING_ROOM:[FactDiningRoom1, FactDiningRoom2, FactDiningRoom3], Room.BEDROOM:[FactBedroom1, FactBedroom2, FactBedroom3, FactBedroom4], Room.ENSUITE:[FactBathroom1, FactBathroom2, FactBathroom3]}
+class_map = {Room.KITCHEN:[FactKitchen1, FactKitchen2, FactKitchen3, FactKitchen4, FactKitchen5], Room.GARAGE:[FactGarage1, FactGarage2, FactGarage3, FactGarage4], Room.LIVING_ROOM:[FactLounge1, FactLounge2, FactLounge3, FactLounge4], Room.DINING_ROOM:[FactDiningRoom1, FactDiningRoom2, FactDiningRoom3], Room.BEDROOM:[FactBedroom1, FactBedroom2, FactBedroom3, FactBedroom4], Room.ENSUITE:[FactBathroom1, FactBathroom2, FactBathroom3]}
 
 
 # Basic class to handle the facts of the story, the herrings of the story, and the murderer's fake evidence
