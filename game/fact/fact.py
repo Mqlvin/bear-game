@@ -252,7 +252,7 @@ class FactBedroom3(StoryFact):
         elif char_obj.gender == "male":
             return None
 
-        self.fact_string = "You decide to look in the drawers, noticing a jewellery box covered in blood. To your surprise, opening it reveals a small dagger... Maybe the murderer likes jewellery?"
+        self.fact_string = "You decide to look in the drawers, noticing a flowery jewellery box covered in blood. To your surprise, opening it reveals a small dagger... Maybe the murderer likes flowery jewellery?"
         return self
 
 
